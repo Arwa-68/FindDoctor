@@ -1,0 +1,206 @@
+﻿{
+  {
+    "images": [
+      "https://img.ltwebstatic.com/images3_spmp/2023/12/13/41/1702457971464a0824ed752176f30cfaec458d8a1e_square.jpg",
+      "https://img.ltwebstatic.com/images3_spmp/2023/12/13/41/17024579715d443e8afc59cc5fc015a1e2fa69452e_square.jpg",
+      "https://img.ltwebstatic.com/images3_spmp/2023/12/13/ae/170245797469277adafc51223c41964199c5be225b_square.jpg",
+      "https://img.ltwebstatic.com/images3_spmp/2023/12/13/ae/17024579742ab7bcbf3abea6b24b4258a8c33f2bca_square.jpg",
+      "https://img.ltwebstatic.com/images3_spmp/2023/12/13/ae/170245797404f9fd8f60e06d49d8f60e4632ec6f86_square.jpg"
+    ],
+    "retail_price": {
+      "amount": 74.8,
+      "amount_with_symbol": "SR74.80"
+    },
+    "sale_price": {
+      "amount": 74.8,
+      "amount_with_symbol": "SR74.80"
+    },
+    "additional_params": {
+      "spu": "x23121390076",
+      "series_id": "3310"
+    },
+    "url": "https://ar.shein.com/Women-s-Outdoor-Breathable-Comfortable-Walking-Shoes-p-27688363-cat-6887.html",
+    "product_id": "27688363",
+    "title": "حذاء نسائي للمشي في الهواء الطلق مريح ومسامي",
+    "sku": "sx2312139007691139",
+    "color": "أبيض",
+    "main_image": "https://img.ltwebstatic.com/images3_spmp/2023/12/13/41/1702457971464a0824ed752176f30cfaec458d8a1e_square.jpg",
+    "average_rating": 4.99,
+    "sizes": [
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 263,
+        "attr_value_name": "EUR35",
+        "attr_value_name_en": "EUR35",
+        "طول القدم ": " 22.66 cm",
+        "محيط القدم ": " 22.66 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 264,
+        "attr_value_name": "EUR36",
+        "attr_value_name_en": "EUR36",
+        "طول القدم ": " 23.33 cm",
+        "محيط القدم ": " 23 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 265,
+        "attr_value_name": "EUR37",
+        "attr_value_name_en": "EUR37",
+        "طول القدم ": " 24 cm",
+        "محيط القدم ": " 23.34 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 266,
+        "attr_value_name": "EUR38",
+        "attr_value_name_en": "EUR38",
+        "طول القدم ": " 24.67 cm",
+        "محيط القدم ": " 23.68 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 267,
+        "attr_value_name": "EUR39",
+        "attr_value_name_en": "EUR39",
+        "طول القدم ": " 25.34 cm",
+        "محيط القدم ": " 24.02 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 268,
+        "attr_value_name": "EUR40",
+        "attr_value_name_en": "EUR40",
+        "طول القدم ": " 26.01 cm",
+        "محيط القدم ": " 24.36 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 269,
+        "attr_value_name": "EUR41",
+        "attr_value_name_en": "EUR41",
+        "طول القدم ": " 26.68 cm",
+        "محيط القدم ": " 24.7 cm",
+        "is_sold_out": false
+      },
+      {
+        "attr_id": 87,
+        "attr_name": "مقاس",
+        "attr_value_id": 270,
+        "attr_value_name": "EUR42",
+        "attr_value_name_en": "EUR42",
+        "طول القدم ": " 27.35 cm",
+        "محيط القدم ": " 25.05 cm",
+        "is_sold_out": true
+      }
+    ],
+    "category_name": "أحذية مشي نسائية",
+    "description": "لون: أبيض\nالمواد الخارجية: شبكة\nالمادة الخارجية للحذاء: إيفا\nبطانة المواد: شبكة\nالمواد الداخلية للحذاء: شبكة\n",
+    "specs": [
+      {
+        "name": "لون",
+        "value": "أبيض"
+      },
+      {
+        "name": "المواد الخارجية",
+        "value": "شبكة"
+      },
+      {
+        "name": "المادة الخارجية للحذاء",
+        "value": "إيفا"
+      },
+      {
+        "name": "بطانة المواد",
+        "value": "شبكة"
+      },
+      {
+        "name": "المواد الداخلية للحذاء",
+        "value": "شبكة"
+      }
+    ],
+    "reviews_count": 100,
+    "category_tree": [
+      {
+        "id": "3636",
+        "name": "Shoes",
+        "link": "https://ar.shein.com/Shoes-c-3636.html",
+        "children": [
+          {
+            "id": "1745",
+            "name": "Women Shoes",
+            "link": "https://ar.shein.com/Women-Shoes-c-1745.html",
+            "children": [
+              {
+                "id": "6882",
+                "name": "Women Athletic Shoes",
+                "link": "https://ar.shein.com/Women-Athletic-Shoes-c-6882.html",
+                "children": [
+                  {
+                    "id": "6887",
+                    "name": "Women Walking Shoes",
+                    "link": "https://ar.shein.com/Women-Walking-Shoes-c-6887.html",
+                    "children": [ ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "category_id": "6887",
+    "has_discount": false,
+    "discount_percentage": 0,
+    "variants": [
+      {
+        "url": "https://ar.shein.com/Women-s-Outdoor-Athletic-Breathable-And-Comfortable-Walking-Shoes-p-27898628-cat-6887.html",
+        "product_id": "27898628",
+        "sku": "sx2312139007621229",
+        "image": "https://img.ltwebstatic.com/images3_spmp/2023/12/16/0a/1702740119bedbc3c44c1b4457813f61997661aa4f_square.webp",
+        "discount_percentage": 0,
+        "retail_price": {
+          "amount": 74.8,
+          "amount_with_symbol": "SR74.80"
+        },
+        "sale_price": {
+          "amount": 74.8,
+          "amount_with_symbol": "SR74.80"
+        },
+        "has_discount": false
+      },
+      {
+        "url": "https://ar.shein.com/Ladies-Outdoor-Breathable-Comfortable-Walking-Shoes-p-28799009-cat-6887.html",
+        "product_id": "28799009",
+        "sku": "sx2312139007672783",
+        "image": "https://img.ltwebstatic.com/images3_spmp/2024/01/07/32/17045591301fee54cc6fb3b2e689288ef2bfdf155a.webp",
+        "discount_percentage": 0,
+        "retail_price": {
+          "amount": 74.8,
+          "amount_with_symbol": "SR74.80"
+        },
+        "sale_price": {
+          "amount": 74.8,
+          "amount_with_symbol": "SR74.80"
+        },
+        "has_discount": false
+      }
+    ]
+  }
+}
+
+
+

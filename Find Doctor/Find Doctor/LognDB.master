@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LognDB.master.cs" Inherits="LognDB" %>
+
+<html>
+<head runat="server">
+    <!-- META SECTION -->
+   <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <link rel="icon" type="image/png" href="Content/Content/login/images/icons/favicon.ico" />
+
+          <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/bootstrap/css/bootstrap.min.css">
+
+            <link rel="stylesheet" type="text/css" href="Content/Content/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+              <link rel="stylesheet" type="text/css" href="Content/Content/login/fonts/iconic/css/material-design-iconic-font.min.css">
+
+                <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/animate/animate.css">
+
+                  <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/css-hamburgers/hamburgers.min.css">
+
+                    <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/animsition/css/animsition.min.css">
+
+                      <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/select2/select2.min.css">
+
+                        <link rel="stylesheet" type="text/css" href="Content/Content/login/vendor/daterangepicker/daterangepicker.css">
+
+                          <link rel="stylesheet" type="text/css" href="Content/Content/login/css/util.css">
+                            <link rel="stylesheet" type="text/css" href="Content/Content/login/css/main.css">
+
+                              <meta name="robots" content="noindex, follow">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).pngFix();
+        });
+    </script>
+
+</head>
+<body id="login-bg">
+    <form id="form1" runat="server" class="login100-form validate-form">
+
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" >
+        </asp:ScriptManager>
+
+
+
+
+
+
+
+        <asp:UpdatePanel ID="UpdatePanelNews" runat="server">
+            <ContentTemplate>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+    </form>
+
+<script src="Content/Content/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+
+      <script src="Content/Content/login/vendor/animsition/js/animsition.min.js"></script>
+
+      <script src="Content/Content/login/vendor/bootstrap/js/popper.js"></script>
+      <script src="Content/Content/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+      <script src="Content/Content/login/vendor/select2/select2.min.js"></script>
+
+      <script src="Content/Content/login/vendor/daterangepicker/moment.min.js"></script>
+      <script src="Content/Content/login/vendor/daterangepicker/daterangepicker.js"></script>
+
+      <script src="Content/Content/login/vendor/countdowntime/countdowntime.js"></script>
+
+      <script src="Content/Content/login/js/main.js"></script>
+
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+      </script>
+      <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"789ee2798b230fd6","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+    </body>
+</html>

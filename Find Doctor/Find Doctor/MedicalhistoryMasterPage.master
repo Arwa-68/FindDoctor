@@ -1,0 +1,442 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MedicalhistoryMasterPage.master.cs" Inherits="MedicalhistoryMasterPage" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Medjestic</title>
+  <!-- Iconic Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendors/iconic-fonts/flat-icons/flaticon.css">
+  <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins.css">
+  <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css">
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery UI -->
+  <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+  <!-- Page Specific CSS (Slick Slider.css) -->
+  <link href="assets/css/slick.css" rel="stylesheet">
+  <!-- Medjestic styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link href="fullcalendar/fullcalendar.css" rel="stylesheet" />
+</head>
+
+<body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
+
+
+
+  <!-- Preloader -->
+  <div id="preloader-wrap">
+    <div class="spinner spinner-8">
+      <div class="ms-circle1 ms-child"></div>
+      <div class="ms-circle2 ms-child"></div>
+      <div class="ms-circle3 ms-child"></div>
+      <div class="ms-circle4 ms-child"></div>
+      <div class="ms-circle5 ms-child"></div>
+      <div class="ms-circle6 ms-child"></div>
+      <div class="ms-circle7 ms-child"></div>
+      <div class="ms-circle8 ms-child"></div>
+      <div class="ms-circle9 ms-child"></div>
+      <div class="ms-circle10 ms-child"></div>
+      <div class="ms-circle11 ms-child"></div>
+      <div class="ms-circle12 ms-child"></div>
+    </div>
+  </div>
+
+  <!-- Overlays -->
+  <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
+  <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight"></div>
+
+  <!-- Sidebar Navigation Left -->
+  <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
+
+    <!-- Logo -->
+    <div class="logo-sn ms-d-block-lg">
+      <a class="pl-0 ml-0 text-center" runat="server" href="~/default.aspx"> <img src="imges/logo.png" alt="logo"> </a>
+      <a href="#" class="text-center ms-logo-img-link"> <img src="assets/img/dashboard/doctor-3.jpg" alt="logo"></a>
+      <h5 class="text-center text-white mt-2"></h5>
+      <h6 class="text-center text-white mb-3"><%= HttpContext.Current.User.Identity.Name %></h6>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
+      <!-- Dashboard -->
+     
+      <!-- /Dashboard -->
+
+<!-- Doctor -->
+
+        <% if (HttpContext.Current.User.Identity.Name.ToLower() == "admin")
+            { %>
+<li class="menu-item" runat="server" id="doc">
+  <a href="#" class="has-chevron" data-toggle="collapse" data-target="#doctor" aria-expanded="false" aria-controls="doctor">
+    <span><i class="fas fa-stethoscope"></i>Doctor</span>
+  </a>
+  <ul id="doctor" class="collapse" aria-labelledby="doctor" data-parent="#side-nav-accordion">
+    <li runat="server" id="approv"> <a href="AddSpec.aspx#">Add Specialist</a> </li> 
+    <li> <a href="Doctorsfrm.aspx#">New Doctor List</a> </li>
+    <li> <a href="AddDoctor.aspx#">New Doctor</a> </li>
+
+  </ul>
+</li>
+        <%} %>
+<!-- Doctor -->
+
+
+<!-- Patient -->
+<li class="menu-item" runat="server" id="Ptnt">
+  <a href="#" class="has-chevron" data-toggle="collapse" data-target="#patient" aria-expanded="false" aria-controls="patient">
+    <span><i class="fas fa-user"></i>Hospital</span>
+  </a>
+  <ul id="patient" class="collapse" aria-labelledby="patient" data-parent="#side-nav-accordion">
+   
+       <% if (HttpContext.Current.User.Identity.Name.ToLower() == "admin")
+           { %>
+    <li runat="server" id="LiCity"> <a href="CityForm.aspx#">Cities List</a> </li> 
+    <li runat="server" id="Li1"> <a href="Hospitalform.aspx#">Hospitals List</a> </li> 
+    <li runat="server" id="Li2"> <a href="AddHospital.aspx#">Add Hospitals</a> </li> 
+   
+      <%} %>
+        <% if (HttpContext.Current.User.Identity.Name.ToLower() != "admin" && HttpContext.Current.User.IsInRole("Pateint")==false)
+            { %>
+    <li runat="server" id="Li3"> <a href="bookingfrm.aspx#">Booking</a> </li> 
+      <%} %>
+
+      <% if (HttpContext.Current.User.IsInRole("Pateint")==true)
+            { %>
+    <li runat="server" id="Li4"> <a href="bookingfrm.aspx#">Booking</a> </li> 
+      <%} %>
+
+  </ul>
+</li>
+<!-- /Patient -->
+        <li class="menu-item" runat="server" id="Li5">
+  <a href="#" class="has-chevron" data-toggle="collapse" data-target="#patient2" aria-expanded="false" aria-controls="patient2">
+    <span><i class="fas fa-user"></i>Transaction</span>
+  </a>
+  <ul id="patient2" class="collapse" aria-labelledby="patient2" data-parent="#side-nav-accordion">
+   
+       <% if (HttpContext.Current.User.Identity.Name.ToLower() == "admin")
+           { %>
+    <li runat="server" id="Li6"> <a href="Patientsfrm.aspx#">Patient List</a> </li> 
+    <li runat="server" id="Li7"> <a href="Visits.aspx#">Visits</a> </li> 
+
+   
+      <%} %>
+       
+
+  </ul>
+</li>
+
+
+
+        <!-- Security -->
+<li class="menu-item">
+  <a href="#" class="has-chevron" data-toggle="collapse" data-target="#Security" aria-expanded="false" aria-controls="department">
+    <span><i class="fas fa-users"></i>Security</span>
+  </a>
+  <ul id="Security" class="collapse" aria-labelledby="department" data-parent="#side-nav-accordion">
+    <li> <a href="ChangePassword.aspx#">Change Password</a> </li>
+    <li> <a runat="server" href="~/Logout.aspx">Logout</a> </li>
+
+  </ul>
+</li>
+<!-- /Department -->
+
+
+
+
+
+
+
+
+
+    </ul>
+
+
+  </aside>
+
+  <!-- Sidebar Right -->
+  <aside id="ms-recent-activity" class="side-nav fixed ms-aside-right ms-scrollable">
+
+    <div class="ms-aside-header">
+      <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-3" role="tablist">
+        <li role="presentation" class="fs-12"><a href="#activityLog" aria-controls="activityLog" class="active" role="tab" data-toggle="tab"> Activity Log</a></li>
+        <li role="presentation" class="fs-12"><a href="#recentPosts" aria-controls="recentPosts" role="tab" data-toggle="tab"> Settings </a></li>
+        <li><button type="button" class="close ms-toggler text-center" data-target="#ms-recent-activity" data-toggle="slideRight"><span aria-hidden="true">&times;</span></button></li>
+      </ul>
+    </div>
+
+    <div class="ms-aside-body">
+
+       <div class="tab-content">
+
+         <div role="tabpanel" class="tab-pane active fade show" id="activityLog">
+           <ul class="ms-activity-log">
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-light">
+                 <i class="flaticon-gear"></i>
+               </div>
+               <h6>Update 1.0.0 Pushed</h6>
+               <span> <i class="material-icons">event</i>1 January, 2019</span>
+               <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-success">
+                 <i class="flaticon-tick-inside-circle"></i>
+               </div>
+               <h6>Profile Updated</h6>
+               <span> <i class="material-icons">event</i>4 March, 2018</span>
+               <p class="fs-14">Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-warning">
+                 <i class="flaticon-alert-1"></i>
+               </div>
+               <h6>Your payment is due</h6>
+               <span> <i class="material-icons">event</i>1 January, 2019</span>
+               <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-danger">
+                 <i class="flaticon-alert"></i>
+               </div>
+               <h6>Database Error</h6>
+               <span> <i class="material-icons">event</i>4 March, 2018</span>
+               <p class="fs-14">Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-info">
+                 <i class="flaticon-information"></i>
+               </div>
+               <h6>Checkout what's Trending</h6>
+               <span> <i class="material-icons">event</i>1 January, 2019</span>
+               <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-secondary">
+                 <i class="flaticon-diamond"></i>
+               </div>
+               <h6>Your Dashboard is ready</h6>
+               <span> <i class="material-icons">event</i>4 March, 2018</span>
+               <p class="fs-14">Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+             </li>
+           </ul>
+           <a href="#" class="btn btn-primary d-block"> View All </a>
+         </div>
+
+         <div role="tabpanel" class="tab-pane fade" id="recentPosts">
+
+           <h6>General Settings</h6>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Location Tracking</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox">
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Allow Notifications</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox">
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Allow Popups</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox" checked>
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <h6>Log Settings</h6>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Enable Logging</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox" checked>
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Audit Logs</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox">
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Error Logs</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox" checked>
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <h6>Advanced Settings</h6>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Enable Logging</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox" checked>
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Audit Logs</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox">
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+           <div class="ms-form-group">
+             <span class="ms-option-name fs-14">Error Logs</span>
+             <label class="ms-switch float-right">
+               <input type="checkbox" checked>
+               <span class="ms-switch-slider round"></span>
+             </label>
+           </div>
+
+         </div>
+
+       </div>
+
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="body-content">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar ms-navbar">
+       <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
+          <span class="ms-toggler-bar bg-white"></span>
+          <span class="ms-toggler-bar bg-white"></span>
+          <span class="ms-toggler-bar bg-white"></span>
+       </div>
+       <div class="logo-sn logo-sm ms-d-block-sm">
+          <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="default.aspx"><img src="https://via.placeholder.com/84x41" alt="logo"> </a>
+       </div>
+       <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+         <li class="ms-nav-item  ms-d-none">
+           <a href="ChangePassword.aspx" class="text-white" ><i class="flaticon-security mr-2"></i> Change Password</a>
+         </li>
+
+         
+
+         
+
+
+
+          
+
+          <li class="ms-nav-item ms-nav-user dropdown">
+             <a href="#"  id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="assets/img/dashboard/doctor-3.jpg" alt="people"> </a>
+             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+                <li class="dropdown-menu-header">
+                   <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, <%= HttpContext.Current.User.Identity.Name %></span></h6>
+                </li>
+                <li class="dropdown-divider"></li>
+               
+                <li class="dropdown-menu-footer">
+                   <a class="media fs-14 p-2" runat="server" href="~/Logout.aspx"> <span><i class="flaticon-shut-down mr-2"></i> Logout</span> </a>
+                </li>
+             </ul>
+          </li>
+       </ul>
+       <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown" data-target="#ms-nav-options">
+          <span class="ms-toggler-bar bg-primary"></span>
+          <span class="ms-toggler-bar bg-primary"></span>
+          <span class="ms-toggler-bar bg-primary"></span>
+       </div>
+    </nav>
+
+
+    <!-- Body Content Wrapper -->
+    <div class="ms-content-wrapper">
+ 
+        <asp:ContentPlaceHolder runat="server" ID="MainContent">
+
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/perfect-scrollbar.js"> </script>
+  <script src="assets/js/jquery-ui.min.js"> </script>
+  <!-- Global Required Scripts End -->
+
+  <!-- Page Specific Scripts Start -->
+  <script src="assets/js/slick.min.js"> </script>
+  <script src="assets/js/moment.js"> </script>
+  <script src="assets/js/jquery.webticker.min.js"> </script>
+
+  <!-- Page Specific Scripts Finish -->
+
+  <!-- Medjestic core JavaScript -->
+  <script src="assets/js/framework.js"></script>
+
+  <!-- Settings -->
+  <script src="assets/js/settings.js"></script>
+        <script src='fullcalendar/moment.min.js'></script>
+		<script src='fullcalendar/fullcalendar.min.js'></script>
+        <script src="js/fullcalendar.js"></script>
+     <script language="javascript" type="text/javascript">
+        (function () {
+
+            var $;
+            var uploadsInProgress = 0;
+            var demo = window.demo = window.demo || {};
+
+            demo.initialize = function () {
+                $ = $telerik.$;
+            };
+
+            window.onFileSelected = function (sender, args) {
+
+               // readURL(args.get_fileInputField());
+
+                if (!uploadsInProgress)
+                    jQuery(".save-button").attr("disabled", "disabled");
+
+                uploadsInProgress++;
+
+                var row = args.get_row();
+
+                jQuery(row).addClass("file-row");
+            }
+
+            window.onFileUploaded = function (sender, args) {
+                decrementUploadsInProgress();
+            }
+
+            window.onUploadFailed = function (sender, args) {
+                decrementUploadsInProgress();
+            }
+
+            window.decrementUploadsInProgress = function () {
+                uploadsInProgress--;
+
+                //if (!uploadsInProgress)
+                //    $("save-button").removeAttr("disabled");
+            }
+        })();
+    </script>
+</body>
+
+</html>
